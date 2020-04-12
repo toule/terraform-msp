@@ -5,17 +5,20 @@ phases:
       java: corretto11
     commands:
     - echo Install Start
-    - pwd
-    - sudo yum upgrade -y
-    - sudo yum update -y
-    - sudo yum install -y wget unzip
+    - export path=$PWD
+    - yum upgrade -y
+    - yum update -y
+    - yum install -y wget unzip
     - export VER="0.12.1"
     - wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
     - mv terraform /usr/local/bin/
   build:
     commands:
     - echo Build started on 'date'
-    - cd $path_vpc
+    - cd $path/$path_vpc
+    - terraform init
+    - terraform apply -auto-approve
+    - cd $path/$path_service
     - terraform init
     - terraform apply -auto-approve
 artifacts:

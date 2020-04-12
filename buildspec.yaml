@@ -16,7 +16,7 @@ phases:
   build:
     commands:
     - echo Build started on 'date'
-    - cd $PATH-1
+    - cd $path_vpc
     - terraform init
     - terraform apply -auto-approve
 artifacts:

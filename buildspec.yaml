@@ -1,10 +1,9 @@
 version: 0.2
-
 phases:
   install:
     runtime-versions:
       java: corretto11
-    commnads:
+    commands:
     - echo Install Start
     - pwd
     - sudo yum upgrade -y

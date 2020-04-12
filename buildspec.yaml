@@ -1,0 +1,25 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commnads:
+    - echo Install Start
+    - pwd
+    - sudo yum upgrade -y
+    - sudo yum update -y
+    - sudo yum install -y wget unzip
+    - export VER="0.12.1"
+    - wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
+    - mv terraform /usr/local/bin/
+  build:
+    commands:
+    - echo Build started on 'date'
+    - cd $PATH-1
+    - terraform init
+    - terraform apply -auto-approve
+artifacts:
+   files:
+    - '**/*'
+   name: arti-$(date+%Y-%m-%d)

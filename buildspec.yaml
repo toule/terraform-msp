@@ -4,23 +4,27 @@ phases:
     runtime-versions:
       java: corretto11
     commands:
-    - echo Install Start
-    - export path=$PWD
-    - yum install -y wget unzip
-    - export VER="0.12.13"
-    - wget https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
-    - unzip terraform_${VER}_linux_amd64.zip
-    - mv terraform /usr/local/bin/
+      - echo Install Start
+      - export path=$PWD
+      - yum install -y wget unzip
+      - export VER="0.12.13"
+      - >-
+        wget
+        https://releases.hashicorp.com/terraform/${VER}/terraform_${VER}_linux_amd64.zip
+      - 'unzip terraform_${VER}_linux_amd64.zip'
+      - mv terraform /usr/local/bin/
   build:
     commands:
-    - echo Build started on 'date'
-    - cd $path/$path_vpc
-    - terraform init
-    - terraform apply -auto-approve
-    - cd $path/$path_service
-    - terraform init
-    - terraform apply -auto-approve
+      - echo Build started on 'date'
+      - cd $path/$path_vpc
+      - terraform init
+      - terraform plan
+      - terraform apply -auto-approve
+      - cd $path/$path_service
+      - terraform init
+      - terraform plan
+      - terraform apply -auto-approve
 artifacts:
-   files:
+  files:
     - '**/*'
-   name: arti-$(date+%Y-%m-%d)
+  name: arti-$(date+%Y-%m-%d)

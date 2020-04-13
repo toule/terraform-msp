@@ -3,7 +3,7 @@ output "provider" {
 }
 
 output "region" {
-  value = "ap-northeast-1"
+  value = "ap-northeast-2"
 }
 
 output "project_name" {

@@ -1,2 +1,2 @@
-env/dev/vpc/.terraform
-env/dev/webserver/.terraform
+env/stage/vpc/.terraform
+env/stage/webserver/.terraform

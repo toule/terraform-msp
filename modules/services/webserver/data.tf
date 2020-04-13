@@ -8,7 +8,7 @@ data "terraform_remote_state" "vpc" {
   config = {
     bucket = "${module.global_var.bucket}"
     region = "${module.global_var.region}"
-    key = "internal-infra/${var.stage}/vpc/terraform.tfstate"
+    key = "${module.global_var.location}-infra/${var.stage}/vpc/terraform.tfstate"
     encrypt = true
   }
 }

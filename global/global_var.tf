@@ -7,7 +7,7 @@ output "region" {
 }
 
 output "project_name" {
-  value = "msp-2"
+  value = "msp-1"
 }
 
 output "location" {

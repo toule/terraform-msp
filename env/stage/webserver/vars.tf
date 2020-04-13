@@ -5,7 +5,7 @@ variable "cluster" {
 
 variable "stage" {
   description = "select stage e.g stage, prod"
-  default = "dev"
+  default = "stage"
 }
 
 variable "ec2_count" {

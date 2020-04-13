@@ -16,9 +16,11 @@ phases:
     - echo Build started on 'date'
     - cd $path/$path_vpc
     - terraform init
+    - terraform plan
     - terraform apply -auto-approve
     - cd $path/$path_service
     - terraform init
+    - terraform plan
     - terraform apply -auto-approve
 artifacts:
    files:

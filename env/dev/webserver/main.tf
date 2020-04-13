@@ -8,6 +8,7 @@ provider "aws" {
 
 module "instance" {
   source = "../../../modules/services/webserver"
+  
   ec2_count = "${var.ec2_count}"
   cluster = "${var.cluster}-${var.stage}"
   ami_id = "ami-08ab3f7e72215fe91"

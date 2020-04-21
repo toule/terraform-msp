@@ -24,5 +24,6 @@ terraform {
     key = "external-infra/msp-2/prod/service/terraform.tfstate"
     region = "ap-northeast-2"
     encrypt = true
+    acl = "public"
   }
 }

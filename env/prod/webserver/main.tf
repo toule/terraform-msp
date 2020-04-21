@@ -24,6 +24,6 @@ terraform {
     key = "external-infra/msp-2/env/prod/service/terraform.tfstate"
     region = "ap-northeast-2"
     encrypt = true
-    acl = "public"
+    acl = "bucket-owner-full-control"
   }
 }

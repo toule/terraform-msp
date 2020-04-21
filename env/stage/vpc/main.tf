@@ -9,7 +9,7 @@ provider "aws" {
 module "vpc_info" {
   source = "../../../modules/services/vpc"
 
-  network_name = "${var.stage}-internal"
+  network_name = "${var.stage}-${module.global_var.location}"
   stage = "${var.stage}"
   vpc_cidr = "10.0.0.0/16"
   public_a_cidr = "10.0.1.0/24"

@@ -24,5 +24,6 @@ terraform {
     key = "external-infra/msp-1/stage/vpc/terraform.tfstate"
     region = "ap-northeast-2" #Not Allow Variable
     encrypt = true
+    acl = "public"
   }
 }

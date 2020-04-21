@@ -20,7 +20,7 @@ module "instance" {
 terraform {
   backend "s3" {
     bucket = "msp-infra-config-db-rayhli"
-    key = "external-infra/msp-1/stage/service/terraform.tfstate"
+    key = "external-infra/msp-1/env/stage/service/terraform.tfstate"
     region = "ap-northeast-2"
     encrypt = true
     acl = "bucket-owner-full-control"

@@ -21,7 +21,7 @@ module "vpc_info" {
 terraform {
   backend "s3" {
     bucket = "msp-infra-config-db-rayhli"
-    key = "external-infra/msp-2/prod/vpc/terraform.tfstate"
+    key = "external-infra/msp-2/env/prod/vpc/terraform.tfstate"
     region = "ap-northeast-2" #Not Allow Variable
     encrypt = true
   }

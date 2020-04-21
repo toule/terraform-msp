@@ -21,7 +21,7 @@ module "instance" {
 terraform {
   backend "s3" {
     bucket = "msp-infra-config-db-rayhli"
-    key = "external-infra/msp-2/prod/service/terraform.tfstate"
+    key = "external-infra/msp-2/env/prod/service/terraform.tfstate"
     region = "ap-northeast-2"
     encrypt = true
     acl = "public"

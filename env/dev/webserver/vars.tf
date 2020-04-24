@@ -10,7 +10,7 @@ variable "stage" {
 
 variable "ec2_count" {
   description = "Choose the number of ec2"
-  default = 3
+  default = 2
 }
 
 variable "min_size" {
